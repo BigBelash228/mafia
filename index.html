@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="shortcut icon" href="./img/mafia-icon.svg" type="image/x-icon">
+    <title>Mafia</title>
+</head>
+<body>
+<section class="background">
+    <img src="./img/mafia-back.svg" alt="" class="mafia-back">
+    <img src="./img/officer-back.svg" alt="" class="officer-back">
+</section>
+<section id="start-section">
+    <img src="./img/three-mafias.svg" alt="" class="img-three-mafias">
+    <h1 style="margin-bottom: 1rem;">Мафия</h1>
+    <div class="holder">
+        <p>Количиство игроков</p>
+        <select name="" id="" class="number-of-players-select">
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10" selected>10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+        </select>
+        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" min="5" max="40" value="10" class="number-of-players-input">
+    </div>
+    <div class="holder">
+        <p>Количиство мафии</p>
+        <select name="" id="" class="number-of-mafia-select">
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3" selected>03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10" disabled>10</option>
+            <option value="11" disabled>11</option>
+            <option value="12" disabled>12</option>
+            <option value="13" disabled>13</option>
+        </select>
+        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" min="1" max="13" value="3" class="number-of-mafia-input">
+    </div>
+    <div class="holder">
+        <input type="checkbox" id="officer-choice-checkbox">
+        <label for="officer-choice-checkbox">Шериф</label>
+    </div>
+    <div class="holder">
+        <input type="checkbox" id="doctor-choice-checkbox">
+        <label for="doctor-choice-checkbox">Доктор</label>
+    </div>
+    <div class="holder">
+        <input type="checkbox" id="prostitute-choice-checkbox">
+        <label for="prostitute-choice-checkbox">Путана</label>
+    </div>
+    <div class="holder">
+        <input type="checkbox" id="boss-choice-checkbox">
+        <label for="boss-choice-checkbox">Дон</label>
+    </div>
+    <button id="play-btn">Играть</button>
+</section>
+<section id="game-section">
+    <button id='finish-btn'>Закончить</button>
+</section>
+<script src="main.js"></script>
+</body>
+</html>

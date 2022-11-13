@@ -1,0 +1,107 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: rgb(170, 30, 20);
+	background-color: rgb(175, 27, 27);
+	background-color: rgb(240, 240, 240);
+	background-color: rgb(15, 15, 15);
+	font-family: 'Roboto Slab', serif;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+img{
+	pointer-events: none;
+}
+.background{
+	width: 100%;
+	height: 100%;
+}
+.mafia-back{
+	position: absolute;
+	width: 200px;
+	left: 30px;
+	top: 100px;
+}
+.officer-back{
+	position: absolute;
+	right: 30px;
+	top: 100px;
+	width: 200px;
+}
+#start-section{
+	padding-top: 1rem;
+	font-size: 20px;
+	color: rgb(200, 20, 20);
+	color: rgb(175, 27, 27);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.holder{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img-three-mafias{
+	width: 100px;
+	/* background-color: aquamarine; */
+}
+.number-of-players-select, .number-of-mafia-select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	box-shadow: none;
+	border: solid rgb(175, 27, 27);
+	color: rgb(240, 240, 240);
+	padding: 3px;
+	margin-left: 5px;
+	border-radius: 3px;
+	background-color: rgba(15, 15, 15, 0);
+	font-weight: 800;
+	text-align: center;
+	display: none;
+}
+select::-ms-expand {
+	display: none;
+}
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.number-of-players-input, .number-of-mafia-input{
+	display: none;
+	width: 30px;
+	box-shadow: none;
+	border: solid rgb(175, 27, 27);
+	color: rgb(240, 240, 240);
+	padding: 3px;
+	margin-left: 5px;
+	border-radius: 3px;
+	background-color: rgba(15, 15, 15, 0);
+	font-weight: 800;
+	text-align: center;
+	outline:none;
+}
+.number-of-players-input::selection, .number-of-mafia-input::selection{
+	background-color: rgb(175, 27, 27);
+	color: rgb(15, 15, 15);
+}
+.number-of-players-input::-moz-selection, .number-of-mafia-input::-moz-selection{
+	background-color: rgb(175, 27, 27);
+	color: rgb(15, 15, 15);
+}
+input[type='checkbox']{
+	background-color: rgb(175, 27, 27);
+	outline: none;
+	background-color: solid 1px;
+}
+#game-section{
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+}
