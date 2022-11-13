@@ -2,15 +2,15 @@ let inputPlayers = document.getElementsByClassName('number-of-players-input')[0]
 let inputMafia = document.getElementsByClassName('number-of-mafia-input')[0];
 let selectPlayers = document.getElementsByClassName('number-of-players-select')[0];
 let selectMafia = document.getElementsByClassName('number-of-mafia-select')[0];
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
-.test(navigator.userAgent)) {
-selectPlayers.style.display = 'block';
-selectMafia.style.display = 'block';
-console.log('mobile')
-}	else {console.log('pc') 
+// if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+// .test(navigator.userAgent)) {
+// selectPlayers.style.display = 'block';
+// selectMafia.style.display = 'block';
+// console.log('mobile')
+// }	else {console.log('pc') 
 	inputPlayers.style.display = 'block';
 	inputMafia.style.display = 'block';
-}
+// }
 
 selectPlayers.addEventListener('change', () => {
 	alert(selectPlayers.value);
