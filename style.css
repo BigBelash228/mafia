@@ -14,7 +14,11 @@ body{
 }
 img{
 	pointer-events: none;
-	z-index: -100;
+}
+.card{
+	width: 100px;
+	outline: 1px solid black;
+	border-radius: 5px;
 }
 .background{
 	width: 100%;
@@ -25,12 +29,14 @@ img{
 	width: 200px;
 	left: 30px;
 	top: 100px;
+	z-index: -100;
 }
 .officer-back{
 	position: absolute;
 	right: 30px;
 	top: 100px;
 	width: 200px;
+	z-index: -100;
 }
 #start-section{
 	padding-top: 1rem;
