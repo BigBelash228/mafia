@@ -2,6 +2,14 @@
 	margin: 0;
 	padding: 0;
 }
+*::selection{
+	background-color: rgb(240, 240, 240);
+	color: rgb(15, 15, 15);
+}
+*::-moz-selection{
+	background-color: rgb(240, 240, 240);
+	color: rgb(15, 15, 15);
+}
 body{
 	background-color: rgb(15, 15, 15);
 	font-family: 'Roboto Slab', serif;
@@ -81,14 +89,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	text-align: center;
 	outline:none;
 }
-.number-of-players-input::selection, .number-of-mafia-input::selection{
-	background-color: rgb(175, 27, 27);
-	color: rgb(15, 15, 15);
-}
-.number-of-players-input::-moz-selection, .number-of-mafia-input::-moz-selection{
-	background-color: rgb(175, 27, 27);
-	color: rgb(15, 15, 15);
-}
+
 input[type='checkbox']{
 	background-color: rgb(175, 27, 27);
 	outline: none;

@@ -100,6 +100,7 @@ let finishBtn = document.getElementsByClassName('finish-btn')[0];
 let getRoleBtn = document.getElementsByClassName('get-role')[0];
 let hideCardBtn = document.getElementsByClassName('hide-card')[0];
 let rolesSection = document.getElementsByClassName('roles-section')[0];
+let playerNumber = 1;
 
 //чекбоксы
 let bossCheckbox = document.getElementById('boss-choice-checkbox');
@@ -165,6 +166,8 @@ getRoleBtn.addEventListener('click', ()=>{
 	getRoleFunction();
 })
 hideCardBtn.addEventListener('click', ()=>{
+	playerNumber++;
+	document.getElementsByClassName('player-number')[0].innerHTML = playerNumber;
 	hideCardBtn.style.display = 'none';
 	getRoleBtn.style.display = 'block';
 	rolesSection.innerHTML = questionCard;
