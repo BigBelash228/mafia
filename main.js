@@ -145,7 +145,8 @@ playBtn.addEventListener('click', ()=>{
 	if(officerCheckbox.checked){
 		arrayRoles.push(officer);
 	}
-	console.log(arrayRoles)
+	console.log(arrayRoles);
+	rolesSection.innerHTML = questionCard;
 })
 finishBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'none';
