@@ -98,46 +98,71 @@ function functionMaxMafia(){
 	}
 	inputMafia.value = maxMafia;
 }
-
+//кнопки и секции
 let startSection = document.getElementsByClassName('start-section')[0];
 let gameSection = document.getElementsByClassName('game-section')[0];
 let playBtn = document.getElementsByClassName('play-btn')[0];
 let finishBtn = document.getElementsByClassName('finish-btn')[0];
 let getRoleBtn = document.getElementsByClassName('get-role')[0];
 let hideCardBtn = document.getElementsByClassName('hide-card')[0];
+let rolesSection = document.getElementsByClassName('roles-section')[0];
+
+//чекбоксы
+let bossCheckbox = document.getElementById('boss-choice-checkbox');
+let doctorCheckbox = document.getElementById('doctor-choice-checkbox');
+let prostituteCheckbox = document.getElementById('prostitute-choice-checkbox');
+let officerCheckbox = document.getElementById('officer-choice-checkbox');
+
+
+// роли
+let boss = `<img src="./img/boss.svg" class="card"> <p class="card-p">Дон</p>`;
+let mafia = `<img src="./img/mafia.svg" class="card"> <p class="card-p">Мафия</p>`;
+let civilian = `<img src="./img/civilian.svg" class="card"> <p class="card-p">Мирный житель</p>`;
+let doctor = `<img src="./img/doctor.svg" class="card"> <p class="card-p">Доктор</p>`;
+let prostitute = `<img src="./img/prostitute.svg" class="card"> <p class="card-p">Путана</p>`;
+let officer = `<img src="./img/officer.svg" class="card"> <p class="card-p">Шериф</p>`;
+let questionCard = `<img src="./img/question-mark.svg" class="card">`
+
+
+
+let arrayRoles = [mafia, civilian];
+let randomRole;
+
+
+
 playBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'flex';
 	startSection.style.display = 'none';
+	if(bossCheckbox.checked){
+		arrayRoles.push(boss);
+	}
+	if(doctorCheckbox.checked){
+		arrayRoles.push(doctor);
+	}
+	if(prostituteCheckbox.checked){
+		arrayRoles.push(prostitute);
+	}
+	if(officerCheckbox.checked){
+		arrayRoles.push(officer);
+	}
+	console.log(arrayRoles)
 })
 finishBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'none';
 	startSection.style.display = 'flex';
 	hideCardBtn.style.display = 'none';
 	getRoleBtn.style.display = 'block';
+	arrayRoles = [mafia, civilian];
+	console.log(arrayRoles)
 })
 
-
-//раздача карт 
-
-let boss = document.getElementsByClassName('boss-section')[0];
-let mafia = document.getElementsByClassName('mafia-section')[0];
-let civilian = document.getElementsByClassName('civilian-section')[0];
-let doctor = document.getElementsByClassName('doctor-section')[0];
-let officer = document.getElementsByClassName('officer-section')[0];
-let prostitute = document.getElementsByClassName('prostitute-section')[0];
-let arrayRoles = [];
-let roles;
 function getRoleFunction(){
-	
-	arrayRoles.push(roles)
-	if(inputPlayers.value == '10'){
-		console.log(1);
-	}
-	if(inputMafia.value == '3'){
-		console.log(2);
-	}
+	randomRole = Math.floor(Math.random() * arrayRoles.length);
+	console.log(arrayRoles[randomRole]);
+	console.log(randomRole);
+	rolesSection.innerHTML = arrayRoles[randomRole];
 }
-getRoleFunction();
+
 
 getRoleBtn.addEventListener('click', ()=>{
 	hideCardBtn.style.display = 'block';
@@ -147,4 +172,5 @@ getRoleBtn.addEventListener('click', ()=>{
 hideCardBtn.addEventListener('click', ()=>{
 	hideCardBtn.style.display = 'none';
 	getRoleBtn.style.display = 'block';
+	rolesSection.innerHTML = questionCard;
 })

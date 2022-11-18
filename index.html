@@ -82,53 +82,60 @@
         <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" min="1" max="13" value="3" class="number-of-mafia-input">
     </div>
     <div class="holder">
-        <input type="checkbox" class="officer-choice-checkbox">
+        <input type="checkbox" id="officer-choice-checkbox">
         <label for="officer-choice-checkbox">Шериф</label>
     </div>
     <div class="holder">
-        <input type="checkbox" class="doctor-choice-checkbox">
+        <input type="checkbox" id="doctor-choice-checkbox">
         <label for="doctor-choice-checkbox">Доктор</label>
     </div>
     <div class="holder">
-        <input type="checkbox" class="prostitute-choice-checkbox">
+        <input type="checkbox" id="prostitute-choice-checkbox">
         <label for="prostitute-choice-checkbox">Путана</label>
     </div>
     <div class="holder">
-        <input type="checkbox" class="boss-choice-checkbox">
+        <input type="checkbox" id="boss-choice-checkbox">
         <label for="boss-choice-checkbox">Дон</label>
     </div>
     <button class="play-btn">Играть</button>
 </section>
 <section class="game-section">
-    <button class="get-role">Узнать роль</button>
-    <button class="hide-card">Скрыть карту</button>
-    <button class='finish-btn'>Закончить</button>
+    <section class="roles-section">
+        <img src="./img/question-mark.svg" alt="?" class="card">
+        <p class="card-p">Убедитесь что никто не увидет вашу карту</p>
+    </section>
+    <div class="game-btn-holder">
+        <button class="get-role">Узнать роль</button>
+        <button class="hide-card">Скрыть карту</button>
+        <button class='finish-btn'>Закончить</button>
+    </div>
+    
 </section>
-
+<!-- 
 <section class="roles-section boss-section">
-    <img src="./img/boss.svg" alt="boss" class="role boss">
-    <p class="role-p">Дон</p>
+    <img src="./img/boss.svg" alt="boss" class="card boss">
+    <p class="card-p">Дон</p>
 </section>
 <section class="roles-section mafia-section">
-    <img src="./img/mafia.svg" alt="mafia" class="role mafia">
-    <p class="role-p">Мафия</p>
+    <img src="./img/mafia.svg" alt="mafia" class="card mafia">
+    <p class="card-p">Мафия</p>
 </section>
 <section class="roles-section civilian-section">
-    <img src="./img/civilian.svg" alt="civilian" class="role civilian">
-    <p class="role-p">Мирный житель</p>
+    <img src="./img/civilian.svg" alt="civilian" class="card civilian">
+    <p class="card-p">Мирный житель</p>
 </section>
 <section class="roles-section doctor-section">
-    <img src="./img/doctor.svg" alt="doctor" class="role doctor">
-    <p class="role-p">Доктор</p>
+    <img src="./img/doctor.svg" alt="doctor" class="card doctor">
+    <p class="card-p">Доктор</p>
 </section>
 <section class="roles-section officer-section">
-    <img src="./img/officer.svg" alt="officer" class="role officer">
-    <p class="role-p">Шериф</p>
+    <img src="./img/officer.svg" alt="officer" class="card officer">
+    <p class="card-p">Шериф</p>
 </section>
 <section class="roles-section prostitute-section">
-    <img src="./img/prostitute.svg" alt="prostitute" class="role prostitute">
-    <p class="role-p">Путана</p>
-</section>
+    <img src="./img/prostitute.svg" alt="prostitute" class="card prostitute">
+    <p class="card-p">Путана</p>
+</section> -->
 
 <script src="main.js"></script>
 </body>
