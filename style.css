@@ -61,24 +61,6 @@ button:hover{
 }
 .img-three-mafias{
 	width: 100px;
-	/* background-color: aquamarine; */
-}
-.number-of-players-select, .number-of-mafia-select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	box-shadow: none;
-	border: solid rgb(175, 27, 27);
-	color: rgb(240, 240, 240);
-	padding: 3px;
-	margin-left: 5px;
-	border-radius: 3px;
-	background-color: rgba(15, 15, 15, 0);
-	font-weight: 800;
-	text-align: center;
-	display: none;
-}
-select::-ms-expand {
-	display: none;
 }
 input[type='number'] {
     -moz-appearance:textfield;
@@ -87,7 +69,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 .number-of-players-input, .number-of-mafia-input{
-	display: none;
 	width: 30px;
 	box-shadow: none;
 	border: solid rgb(175, 27, 27);
