@@ -17,20 +17,12 @@
     <img src="./img/mafia-back.svg" alt="" class="mafia-back">
     <img src="./img/officer-back.svg" alt="" class="officer-back">
 </section>
-<section class="roles">
-    <img src="./img/boss.svg" alt="" class="card">
-    <img src="./img/civilian.svg" alt="" class="card">
-    <img src="./img/doctor.svg" alt="" class="card">
-    <img src="./img/mafia.svg" alt="" class="card">
-    <img src="./img/officer.svg" alt="" class="card">
-    <img src="./img/prostitute.svg" alt="" class="card">
-</section>
-<section id="start-section">
+<section class="start-section">
     <img src="./img/three-mafias.svg" alt="" class="img-three-mafias">
     <h1 style="margin-bottom: 1rem;">Мафия</h1>
     <div class="holder">
         <p>Количиство игроков</p>
-        <select name="" id="" class="number-of-players-select">
+        <select class="number-of-players-select">
             <option value="5">05</option>
             <option value="6">06</option>
             <option value="7">07</option>
@@ -72,7 +64,7 @@
     </div>
     <div class="holder">
         <p>Количиство мафии</p>
-        <select name="" id="" class="number-of-mafia-select">
+        <select class="number-of-mafia-select">
             <option value="1">01</option>
             <option value="2">02</option>
             <option value="3" selected>03</option>
@@ -90,26 +82,54 @@
         <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" min="1" max="13" value="3" class="number-of-mafia-input">
     </div>
     <div class="holder">
-        <input type="checkbox" id="officer-choice-checkbox">
+        <input type="checkbox" class="officer-choice-checkbox">
         <label for="officer-choice-checkbox">Шериф</label>
     </div>
     <div class="holder">
-        <input type="checkbox" id="doctor-choice-checkbox">
+        <input type="checkbox" class="doctor-choice-checkbox">
         <label for="doctor-choice-checkbox">Доктор</label>
     </div>
     <div class="holder">
-        <input type="checkbox" id="prostitute-choice-checkbox">
+        <input type="checkbox" class="prostitute-choice-checkbox">
         <label for="prostitute-choice-checkbox">Путана</label>
     </div>
     <div class="holder">
-        <input type="checkbox" id="boss-choice-checkbox">
+        <input type="checkbox" class="boss-choice-checkbox">
         <label for="boss-choice-checkbox">Дон</label>
     </div>
-    <button id="play-btn">Играть</button>
+    <button class="play-btn">Играть</button>
 </section>
-<section id="game-section">
-    <button id='finish-btn'>Закончить</button>
+<section class="game-section">
+    <button class="get-role">Узнать роль</button>
+    <button class="hide-card">Скрыть карту</button>
+    <button class='finish-btn'>Закончить</button>
 </section>
+
+<section class="roles-section boss-section">
+    <img src="./img/boss.svg" alt="boss" class="role boss">
+    <p class="role-p">Дон</p>
+</section>
+<section class="roles-section mafia-section">
+    <img src="./img/mafia.svg" alt="mafia" class="role mafia">
+    <p class="role-p">Мафия</p>
+</section>
+<section class="roles-section civilian-section">
+    <img src="./img/civilian.svg" alt="civilian" class="role civilian">
+    <p class="role-p">Мирный житель</p>
+</section>
+<section class="roles-section doctor-section">
+    <img src="./img/doctor.svg" alt="doctor" class="role doctor">
+    <p class="role-p">Доктор</p>
+</section>
+<section class="roles-section officer-section">
+    <img src="./img/officer.svg" alt="officer" class="role officer">
+    <p class="role-p">Шериф</p>
+</section>
+<section class="roles-section prostitute-section">
+    <img src="./img/prostitute.svg" alt="prostitute" class="role prostitute">
+    <p class="role-p">Путана</p>
+</section>
+
 <script src="main.js"></script>
 </body>
 </html>

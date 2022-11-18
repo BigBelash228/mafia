@@ -15,8 +15,6 @@ let selectMafia = document.getElementsByClassName('number-of-mafia-select')[0];
 selectPlayers.addEventListener('change', () => {
 	alert(selectPlayers.value);
 });
-
-
 inputPlayers.addEventListener('change', () =>{
 	if(inputPlayers.value > 40){
 		inputPlayers.value = 40;
@@ -41,7 +39,6 @@ inputPlayers.addEventListener('input', () =>{
 	inputPlayers.value = inputPlayers.value.replace(/[+,-]/g, '');
 	functionMaxMafia();
 })
-
 
 inputMafia.addEventListener('change', () =>{
 	if(inputMafia.value > maxMafia){
@@ -102,17 +99,52 @@ function functionMaxMafia(){
 	inputMafia.value = maxMafia;
 }
 
-let startSection = document.getElementById('start-section');
-let gameSection = document.getElementById('game-section');
-let playBtn = document.getElementById('play-btn');
-let finishBtn = document.getElementById('finish-btn');
-playBtn.addEventListener('click', playFunction)
-function playFunction(){
+let startSection = document.getElementsByClassName('start-section')[0];
+let gameSection = document.getElementsByClassName('game-section')[0];
+let playBtn = document.getElementsByClassName('play-btn')[0];
+let finishBtn = document.getElementsByClassName('finish-btn')[0];
+let getRoleBtn = document.getElementsByClassName('get-role')[0];
+let hideCardBtn = document.getElementsByClassName('hide-card')[0];
+playBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'flex';
 	startSection.style.display = 'none';
-}
-finishBtn.addEventListener('click', finishFunction)
-function finishFunction(){
+})
+finishBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'none';
 	startSection.style.display = 'flex';
+	hideCardBtn.style.display = 'none';
+	getRoleBtn.style.display = 'block';
+})
+
+
+//раздача карт 
+
+let boss = document.getElementsByClassName('boss-section')[0];
+let mafia = document.getElementsByClassName('mafia-section')[0];
+let civilian = document.getElementsByClassName('civilian-section')[0];
+let doctor = document.getElementsByClassName('doctor-section')[0];
+let officer = document.getElementsByClassName('officer-section')[0];
+let prostitute = document.getElementsByClassName('prostitute-section')[0];
+let arrayRoles = [];
+let roles;
+function getRoleFunction(){
+	
+	arrayRoles.push(roles)
+	if(inputPlayers.value == '10'){
+		console.log(1);
+	}
+	if(inputMafia.value == '3'){
+		console.log(2);
+	}
 }
+getRoleFunction();
+
+getRoleBtn.addEventListener('click', ()=>{
+	hideCardBtn.style.display = 'block';
+	getRoleBtn.style.display = 'none';
+	getRoleFunction();
+})
+hideCardBtn.addEventListener('click', ()=>{
+	hideCardBtn.style.display = 'none';
+	getRoleBtn.style.display = 'block';
+})
