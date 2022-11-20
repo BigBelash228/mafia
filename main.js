@@ -4,7 +4,6 @@ let background = document.getElementsByClassName('background')[0];
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
 .test(navigator.userAgent)) {
 	background.style.display = 'none';
-console.log('mobile')
 }	else {
 	background.style.display = 'flex';
 }
@@ -126,14 +125,7 @@ let randomRole;
 let numberSpecialRedCards = 0;
 let numberSpecialBlackCards = 0;
 
-function deleteRole(roleName){
-	for (let i = 0; i < arrayRoles.length; i++) {
-		if (arrayRoles[i] === roleName) {
-			arrayRoles.splice(i, 1);
-		break;
-		}
-	}
-}
+
 
 playBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'flex';
@@ -142,9 +134,6 @@ playBtn.addEventListener('click', ()=>{
 	if(bossCheckbox.checked){
 		arrayRoles.push(boss);
 		numberSpecialBlackCards++;
-		// if(inputMafia.value == 1){
-		// 	deleteRole(mafia);
-		// }
 	}
 	if(maniacCheckbox.checked){
 		arrayRoles.push(maniac);
@@ -171,6 +160,9 @@ playBtn.addEventListener('click', ()=>{
 	rolesSection.innerHTML = questionCard;
 })
 finishBtn.addEventListener('click', ()=>{
+	document.getElementsByClassName('are-you-sure-holer')[0].style.display = 'flex';    
+})
+document.getElementsByClassName('yes-btn')[0].addEventListener('click', ()=>{
 	gameSection.style.display = 'none';
 	startSection.style.display = 'flex';
 	hideCardBtn.style.display = 'none';
@@ -179,8 +171,14 @@ finishBtn.addEventListener('click', ()=>{
     numberSpecialRedCards = 0;
     numberSpecialBlackCards = 0;
 	arrayRoles = [];
+	document.getElementsByClassName('player-number-holder')[0].style.display = 'flex';
+	rolesSection.style.display = 'flex';
+	document.getElementsByClassName('are-you-sure-holer')[0].style.display = 'none';
+	document.getElementsByClassName('players-and-roles-section')[0].style.display = 'none';
 })
-
+document.getElementsByClassName('cancel-btn')[0].addEventListener('click', ()=>{
+	document.getElementsByClassName('are-you-sure-holer')[0].style.display = 'none';
+})
 
 
 getRoleBtn.addEventListener('click', ()=>{
@@ -192,7 +190,6 @@ getRoleBtn.addEventListener('click', ()=>{
 	// if(arrayRoles[randomRole] === civilian){
 	// 	arrayRoles.splice(randomRole, 1);
 	// 	console.log('delete civilian');
-		
 	// }
 	// else if(arrayRoles[randomRole] === mafia){
 	// 	arrayRoles.splice(randomRole, 1);
@@ -216,9 +213,17 @@ getRoleBtn.addEventListener('click', ()=>{
 	// }
 })
 hideCardBtn.addEventListener('click', ()=>{
-	playerNumber++;
-	document.getElementsByClassName('player-number')[0].innerHTML = playerNumber;
 	hideCardBtn.style.display = 'none';
-	getRoleBtn.style.display = 'block';
-	rolesSection.innerHTML = questionCard;
+	if(arrayRoles == ''){
+		document.getElementsByClassName('players-and-roles-section')[0].style.display = 'flex';
+		getRoleBtn.style.display = 'none';
+		rolesSection.style.display = 'none';
+		document.getElementsByClassName('player-number-holder')[0].style.display = 'none';
+	}
+	else{playerNumber++;
+		// document.getElementsByClassName('players-and-roles-section')[0].innerHTML = playerNumber;
+		document.getElementsByClassName('player-number')[0].innerHTML = playerNumber;
+		getRoleBtn.style.display = 'block';
+		rolesSection.innerHTML = questionCard;
+	}
 })

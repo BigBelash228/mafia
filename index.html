@@ -17,6 +17,13 @@
     <img src="./img/mafia-back.svg" alt="" class="mafia-back">
     <img src="./img/officer-back.svg" alt="" class="officer-back">
 </section>
+<div class="are-you-sure-holer">
+    <h2>Закончить игру?</h2>
+    <div>
+        <button class="yes-btn" style="padding: 2px 1rem;">Да</button>
+        <button class="cancel-btn">Отменить</button>
+    </div>
+</div>
 <section class="start-section">
     <img src="./img/three-mafias.svg" alt="" class="img-three-mafias">
     <h1 style="margin-bottom: 1rem;">Мафия</h1>
@@ -28,36 +35,37 @@
         <p>Количиство мафии</p>
         <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" min="1" max="13" value="3" class="number-of-mafia-input">
     </div>
-    <div class="holder">
-        <input type="checkbox" id="officer-choice-checkbox">
-        <label for="officer-choice-checkbox">Шериф</label>
-    </div>
-    <div class="holder">
-        <input type="checkbox" id="doctor-choice-checkbox">
-        <label for="doctor-choice-checkbox">Доктор</label>
-    </div>
-    <div class="holder">
-        <input type="checkbox" id="prostitute-choice-checkbox">
-        <label for="prostitute-choice-checkbox">Путана</label>
-    </div>
-    <div class="holder">
-        <input type="checkbox" id="boss-choice-checkbox">
-        <label for="boss-choice-checkbox">Дон</label>
-    </div>
-    <div class="holder">
-        <input type="checkbox" id="maniac-choice-checkbox">
-        <label for="maniac-choice-checkbox">Маньяк</label>
+    <div class="checkbox-holder">
+        <div class="holder">
+            <input type="checkbox" id="officer-choice-checkbox">
+            <label for="officer-choice-checkbox">Шериф</label>
+        </div>
+        <div class="holder">
+            <input type="checkbox" id="doctor-choice-checkbox">
+            <label for="doctor-choice-checkbox">Доктор</label>
+        </div>
+        <div class="holder">
+            <input type="checkbox" id="prostitute-choice-checkbox">
+            <label for="prostitute-choice-checkbox">Путана</label>
+        </div>
+        <div class="holder">
+            <input type="checkbox" id="maniac-choice-checkbox">
+            <label for="maniac-choice-checkbox">Маньяк</label>
+        </div>
+        <div class="holder">
+            <input type="checkbox" id="boss-choice-checkbox">
+            <label for="boss-choice-checkbox">Дон</label>
+        </div>
     </div>
     <button class="play-btn">Играть</button>
 </section>
 <section class="game-section">
-    <div class="holder" style="margin: 1rem auto;">
+    <div class="holder player-number-holder" style="margin: 1rem auto;">
         <p>Игрок под номером: </p>
         <p class="player-number">1</p>
     </div>
-    
-    <section class="roles-section">
-    </section>
+    <section class="roles-section"></section>
+    <section class="players-and-roles-section">pop</section>
     <div class="game-btn-holder">
         <button class="get-role">Узнать роль</button>
         <button class="hide-card">Скрыть карту</button>
