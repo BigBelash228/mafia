@@ -8,7 +8,40 @@ console.log('mobile')
 }	else {
 	background.style.display = 'flex';
 }
-
+let maxMafia = 3;
+function functionMaxMafia(){
+	if(inputPlayers.value == ''){
+		maxMafia = 1;
+	}
+	if(7>inputPlayers.value && inputPlayers.value>0){
+		maxMafia = 1;
+	}  if(9>inputPlayers.value && inputPlayers.value>6){
+		maxMafia = 2;
+	} if(12>inputPlayers.value && inputPlayers.value>8){
+		maxMafia = 3;
+	} if(15>inputPlayers.value && inputPlayers.value>11){
+		maxMafia = 4;
+	} if(18>inputPlayers.value && inputPlayers.value>14){
+		maxMafia = 5;
+	} if(21>inputPlayers.value && inputPlayers.value>17){
+		maxMafia = 6;
+	} if(24>inputPlayers.value && inputPlayers.value>20){
+		maxMafia = 7;
+	} if(27>inputPlayers.value && inputPlayers.value>23){
+		maxMafia = 8;
+	} if(30>inputPlayers.value && inputPlayers.value>26){
+		maxMafia = 9;
+	} if(33>inputPlayers.value && inputPlayers.value>29){
+		maxMafia = 10;
+	} if(36>inputPlayers.value && inputPlayers.value>32){
+		maxMafia = 11;
+	} if(39>inputPlayers.value && inputPlayers.value>35){
+		maxMafia = 12;
+	} if(41>inputPlayers.value && inputPlayers.value>38){
+		maxMafia = 13;
+	}
+	inputMafia.value = maxMafia;
+}
 inputPlayers.addEventListener('change', () =>{
 	if(inputPlayers.value > 40){
 		inputPlayers.value = 40;
@@ -58,40 +91,7 @@ inputMafia.addEventListener('input', () =>{
 	}
 	inputMafia.value = inputMafia.value.replace(/[+,-]/g, '');
 })
-let maxMafia = 3;
-function functionMaxMafia(){
-	if(inputPlayers.value == ''){
-		maxMafia = 1;
-	}
-	if(7>inputPlayers.value && inputPlayers.value>0){
-		maxMafia = 1;
-	}  if(9>inputPlayers.value && inputPlayers.value>6){
-		maxMafia = 2;
-	} if(12>inputPlayers.value && inputPlayers.value>8){
-		maxMafia = 3;
-	} if(15>inputPlayers.value && inputPlayers.value>11){
-		maxMafia = 4;
-	} if(18>inputPlayers.value && inputPlayers.value>14){
-		maxMafia = 5;
-	} if(21>inputPlayers.value && inputPlayers.value>17){
-		maxMafia = 6;
-	} if(24>inputPlayers.value && inputPlayers.value>20){
-		maxMafia = 7;
-	} if(27>inputPlayers.value && inputPlayers.value>23){
-		maxMafia = 8;
-	} if(30>inputPlayers.value && inputPlayers.value>26){
-		maxMafia = 9;
-	} if(33>inputPlayers.value && inputPlayers.value>29){
-		maxMafia = 10;
-	} if(36>inputPlayers.value && inputPlayers.value>32){
-		maxMafia = 11;
-	} if(39>inputPlayers.value && inputPlayers.value>35){
-		maxMafia = 12;
-	} if(41>inputPlayers.value && inputPlayers.value>38){
-		maxMafia = 13;
-	}
-	inputMafia.value = maxMafia;
-}
+
 //кнопки и секции
 let startSection = document.getElementsByClassName('start-section')[0];
 let gameSection = document.getElementsByClassName('game-section')[0];
@@ -107,7 +107,7 @@ let bossCheckbox = document.getElementById('boss-choice-checkbox');
 let doctorCheckbox = document.getElementById('doctor-choice-checkbox');
 let prostituteCheckbox = document.getElementById('prostitute-choice-checkbox');
 let officerCheckbox = document.getElementById('officer-choice-checkbox');
-
+let maniacCheckbox = document.getElementById('maniac-choice-checkbox')
 
 // роли
 let boss = `<img src="./img/boss.svg" class="card"> <p class="card-p">Дон</p>`;
@@ -116,7 +116,8 @@ let civilian = `<img src="./img/civilian.svg" class="card"> <p class="card-p">М
 let doctor = `<img src="./img/doctor.svg" class="card"> <p class="card-p">Доктор</p>`;
 let prostitute = `<img src="./img/prostitute.svg" class="card"> <p class="card-p">Путана</p>`;
 let officer = `<img src="./img/officer.svg" class="card"> <p class="card-p">Шериф</p>`;
-let questionCard = `<img src="./img/question-mark.svg" class="card">`
+let maniac = `<img src="./img/maniac.svg" class="card"> <p class="card-p">Маньяк</p>`;
+let questionCard = `<img src="./img/question-mark.svg" class="card">`;
 
 
 
@@ -137,12 +138,17 @@ function deleteRole(roleName){
 playBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'flex';
 	startSection.style.display = 'none';
+	document.getElementsByClassName('player-number')[0].innerHTML = playerNumber;
 	if(bossCheckbox.checked){
 		arrayRoles.push(boss);
 		numberSpecialBlackCards++;
-		if(inputMafia.value == 1){
-			deleteRole(mafia);
-		}
+		// if(inputMafia.value == 1){
+		// 	deleteRole(mafia);
+		// }
+	}
+	if(maniacCheckbox.checked){
+		arrayRoles.push(maniac);
+		numberSpecialRedCards++;
 	}
 	if(doctorCheckbox.checked){
 		arrayRoles.push(doctor);
