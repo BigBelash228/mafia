@@ -122,23 +122,31 @@ let questionCard = `<img src="./img/question-mark.svg" class="card">`
 
 let arrayRoles = [mafia, civilian];
 let randomRole;
-
-
-
+let mafiaClick = 0;
+let civilianClick = 0;
+let numberSpecialRedCards = 0;
+let numberSpecialBlackCards = 0
 playBtn.addEventListener('click', ()=>{
 	gameSection.style.display = 'flex';
 	startSection.style.display = 'none';
 	if(bossCheckbox.checked){
 		arrayRoles.push(boss);
+		numberSpecialBlackCards++;
+		if(inputMafia.value == 1){
+			console.log('delete mafiia')
+		}
 	}
 	if(doctorCheckbox.checked){
 		arrayRoles.push(doctor);
+		numberSpecialRedCards++;
 	}
 	if(prostituteCheckbox.checked){
 		arrayRoles.push(prostitute);
+		numberSpecialRedCards++;
 	}
 	if(officerCheckbox.checked){
 		arrayRoles.push(officer);
+		numberSpecialRedCards++;
 	}
 	console.log(arrayRoles);
 	rolesSection.innerHTML = questionCard;
@@ -148,22 +156,64 @@ finishBtn.addEventListener('click', ()=>{
 	startSection.style.display = 'flex';
 	hideCardBtn.style.display = 'none';
 	getRoleBtn.style.display = 'block';
+	playerNumber = 1;
+	mafiaClick = 0;
+    civilianClick = 0;
+    numberSpecialRedCards = 0;
+    numberSpecialBlackCards = 0
 	arrayRoles = [mafia, civilian];
-	console.log(arrayRoles)
 })
 
-function getRoleFunction(){
-	randomRole = Math.floor(Math.random() * arrayRoles.length);
-	console.log(arrayRoles[randomRole]);
-	console.log(randomRole);
-	rolesSection.innerHTML = arrayRoles[randomRole];
-}
-
+// function deleteRole(roleName){
+// 	for (let i = 0; i < arrayRoles.length; i++) {
+// 		if (arrayRoles[i] === roleName) {
+// 			arrayRoles.splice(i, 1);
+// 			console.log(i)
+// 		break;
+// 		}
+// 	}
+// }
 
 getRoleBtn.addEventListener('click', ()=>{
 	hideCardBtn.style.display = 'block';
 	getRoleBtn.style.display = 'none';
-	getRoleFunction();
+	randomRole = Math.floor(Math.random() * arrayRoles.length);
+	
+	rolesSection.innerHTML = arrayRoles[randomRole];
+	if(arrayRoles[randomRole] === civilian){
+		civilianClick++;
+		if(civilianClick == inputPlayers.value - numberSpecialRedCards - inputMafia.value){
+			// deleteRole(civilian)
+			arrayRoles.splice(randomRole, 1);
+		console.log('delete civilian');
+		}
+	}
+	else if(arrayRoles[randomRole] === mafia){
+		mafiaClick++;
+		if(mafiaClick == inputMafia.value - numberSpecialBlackCards){
+			// deleteRole(mafia)
+			arrayRoles.splice(randomRole, 1);
+		console.log('delete mafia');
+		}
+	}
+	else if(arrayRoles[randomRole] === boss){
+		arrayRoles.splice(randomRole, 1);
+		console.log('delete boss');
+	}
+	else if(arrayRoles[randomRole] === doctor){
+		arrayRoles.splice(randomRole, 1);
+		console.log('delete doctor');
+	}
+	else if(arrayRoles[randomRole] === prostitute){
+		arrayRoles.splice(randomRole, 1);
+		console.log('delete prostitute');
+	}
+	else if(arrayRoles[randomRole] === officer){
+		arrayRoles.splice(randomRole, 1);
+		console.log('delete officer');
+
+	}
+	console.log(arrayRoles)
 })
 hideCardBtn.addEventListener('click', ()=>{
 	playerNumber++;
