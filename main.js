@@ -187,41 +187,24 @@ getRoleBtn.addEventListener('click', ()=>{
 	randomRole = Math.floor(Math.random() * arrayRoles.length);
 	rolesSection.innerHTML = arrayRoles[randomRole];
 	arrayRoles.splice(randomRole, 1);
-	// if(arrayRoles[randomRole] === civilian){
-	// 	arrayRoles.splice(randomRole, 1);
-	// 	console.log('delete civilian');
-	// }
-	// else if(arrayRoles[randomRole] === mafia){
-	// 	arrayRoles.splice(randomRole, 1);
-	// 	console.log('delete mafia');
-	// }
-	// else if(arrayRoles[randomRole] === boss){
-	// 	arrayRoles.splice(randomRole, 1);
-	// 	console.log('delete boss');
-	// }
-	// else if(arrayRoles[randomRole] === doctor){
-	// 	arrayRoles.splice(randomRole, 1);
-	// 	console.log('delete doctor');
-	// }
-	// else if(arrayRoles[randomRole] === prostitute){
-	// 	arrayRoles.splice(randomRole, 1);
-	// 	console.log('delete prostitute');
-	// }
-	// else if(arrayRoles[randomRole] === officer){
-	// 	arrayRoles.splice(randomRole, 1);
-	// 	console.log('delete officer');
-	// }
 })
 hideCardBtn.addEventListener('click', ()=>{
 	hideCardBtn.style.display = 'none';
 	if(arrayRoles == ''){
-		document.getElementsByClassName('players-and-roles-section')[0].style.display = 'flex';
-		getRoleBtn.style.display = 'none';
-		rolesSection.style.display = 'none';
-		document.getElementsByClassName('player-number-holder')[0].style.display = 'none';
+		gameSection.style.display = 'none';
+		startSection.style.display = 'flex';
+		hideCardBtn.style.display = 'none';
+		getRoleBtn.style.display = 'block';
+		playerNumber = 1;
+		numberSpecialRedCards = 0;
+		numberSpecialBlackCards = 0;
+		arrayRoles = [];
+		document.getElementsByClassName('player-number-holder')[0].style.display = 'flex';
+		rolesSection.style.display = 'flex';
+		document.getElementsByClassName('are-you-sure-holer')[0].style.display = 'none';
+		document.getElementsByClassName('players-and-roles-section')[0].style.display = 'none';
 	}
 	else{playerNumber++;
-		// document.getElementsByClassName('players-and-roles-section')[0].innerHTML = playerNumber;
 		document.getElementsByClassName('player-number')[0].innerHTML = playerNumber;
 		getRoleBtn.style.display = 'block';
 		rolesSection.innerHTML = questionCard;
